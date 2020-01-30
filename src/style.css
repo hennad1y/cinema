@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#root .toolbar {
+    display: flex;
+    justify-content: center;
+}
+
+.calendar-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.places-wrapper,
+.sessions-wrapper {
+    margin-left: 30px;
+}
+
+.sessions-wrapper li {
+    margin-bottom: 10px;
+    padding: 5px 2px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+.sessions-wrapper li.disabled {
+    background: #ccc;
+}
+
+.places-wrapper li.active,
+.sessions-wrapper li.active {
+    background: #28a745;
+}
+
+input {
+    margin-top: 3px;
+    padding: 3px 5px;
+}
+
+.about-demo {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.about-demo .show {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.about-demo.active .show {
+    display: none;
+}
+
+.about-demo .hide {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 320px;
+    width: 30vw;
+    left: -100vw;
+    transition: left .7s ease;
+}
+
+.about-demo.active .hide {
+    left: 0;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+.places-wrapper ul {
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.places-wrapper ul li {
+    display: inline-flex;
+    width: 25px;
+    margin: 5px;
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.places-wrapper ul li.disabled {
+    opacity: .65;
+}
