@@ -15,21 +15,33 @@ body * {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
 }
 
 #root .toolbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    width: 100%;
+    max-width: 300px;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    #root .toolbar {
+        max-width: 600px;
+    }
+}
+
+#root .toolbar > * {
+    margin-bottom: 20px;
+    padding: 0 10px;
 }
 
 .calendar-wrapper {
     display: flex;
     flex-direction: column;
-}
-
-.places-wrapper,
-.sessions-wrapper {
-    margin-left: 30px;
 }
 
 .sessions-wrapper li {
@@ -73,14 +85,17 @@ input {
     display: flex;
     flex-direction: column;
     position: relative;
-    min-width: 320px;
+    min-width: 300px;
     width: 30vw;
     left: -100vw;
     transition: left .7s ease;
+    padding: 0 10px;
+    background: #fff;
 }
 
 .about-demo.active .hide {
-    left: 0;
+    left: -10px;
+    z-index: 2;
 }
 
 .arrow {

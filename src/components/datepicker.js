@@ -1,16 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
-import { addDays, format } from 'date-fns';
+import {addDays} from 'date-fns';
 import {formatDate, maxDate, minDate} from "../configuration";
 
-const Datepicker = ({setDate, date = null }) => {
-    const [startDate, setStartDate] = useState(date);
-
-    useEffect(() => {
-        if(!startDate) return;
-
-        setDate(format(startDate, formatDate));
-    }, [startDate, setDate]);
+const Datepicker = ({setDate, date}) => {
 
     return (
         <div className="calendar-wrapper">
@@ -18,8 +11,8 @@ const Datepicker = ({setDate, date = null }) => {
                 Calendar:
             </div>
             <DatePicker
-                selected={startDate}
-                onChange={date => setStartDate(date)}
+                selected={date}
+                onChange={date => setDate(date)}
                 minDate={addDays(new Date(), -minDate)}
                 maxDate={addDays(new Date(), maxDate)}
                 dateFormat={formatDate}
